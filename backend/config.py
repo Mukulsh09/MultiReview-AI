@@ -9,15 +9,15 @@ HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 AGENT_CONFIG = {
     "correctness": {
         "provider": "google",
-        "model": "gemini-1.5-pro",
+        "model": "gemini-2.0-flash",
     },
     "security": {
         "provider": "google",
-        "model": "gemini-1.5-pro",
+        "model": "gemini-2.0-flash",
     },
     "readability": {
         "provider": "google",
-        "model": "gemini-1.5-flash",
+        "model": "gemini-2.0-flash-lite",
     },
     "performance": {
         "provider": "huggingface",
