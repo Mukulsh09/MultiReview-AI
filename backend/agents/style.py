@@ -14,10 +14,13 @@ class StyleAgent(BaseAgent):
         self.client = InferenceClient(token=HF_API_TOKEN)
 
     async def _call_llm(self, prompt: str) -> str:
-        response = self.client.text_generation(
-            prompt,
+        response = self.client.chat_completion(
             model=self.model,
-            max_new_tokens=2000,
+            messages=[
+                {"role": "system", "content": "You are a code review assistant. Respond only with valid JSON arrays."},
+                {"role": "user", "content": prompt},
+            ],
             temperature=0.2,
+            max_tokens=2000,
         )
-        return response
+        return response.choices[0].message.content

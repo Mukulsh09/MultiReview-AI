@@ -21,10 +21,10 @@ AGENT_CONFIG = {
     },
     "performance": {
         "provider": "huggingface",
-        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "model": "Qwen/Qwen2.5-Coder-32B-Instruct",
     },
     "style": {
         "provider": "huggingface",
-        "model": "codellama/CodeLlama-34b-Instruct-hf",
+        "model": "meta-llama/Llama-3.1-8B-Instruct",
     },
 }
