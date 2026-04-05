@@ -35,3 +35,12 @@ Code to review:
 ```python
 {code}
 ```
+
+
+IMPORTANT RULES:
+- ONLY flag issues you can see in the actual code provided. Do not invent issues that don't exist.
+- If a function name is already in snake_case (like calculate_average), do NOT flag it.
+- If the code has a proper docstring, do NOT flag missing docstring.
+- Do NOT flag security, correctness, or performance issues — those are handled by other agents.
+- If the code follows PEP 8 well, return an empty array: []
+- Count the actual lines in the code. Do NOT reference line numbers beyond what exists.
