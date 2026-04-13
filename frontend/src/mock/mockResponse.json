@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "total_issues": 8,
+    "critical": 2,
+    "warning": 4,
+    "info": 2
+  },
+  "agents": [
+    {
+      "name": "correctness",
+      "model": "gpt-4o",
+      "response_time_ms": 2300,
+      "issues": [
+        { "severity": "critical", "line": 4, "message": "Division by zero not handled — crashes if denominator is 0", "suggestion": "if b == 0:\n    raise ValueError('Cannot divide by zero')\nreturn a / b" },
+        { "severity": "warning", "line": 7, "message": "Function returns None implicitly when list is empty", "suggestion": "return result if result else []" }
+      ]
+    },
+    {
+      "name": "security",
+      "model": "gemini-1.5-pro",
+      "response_time_ms": 1800,
+      "issues": [
+        { "severity": "critical", "line": 12, "message": "Hardcoded API key found in source code", "suggestion": "import os\napi_key = os.getenv('API_KEY')" },
+        { "severity": "warning", "line": 15, "message": "Using eval() on user input is dangerous", "suggestion": "Use ast.literal_eval() instead of eval()" }
+      ]
+    },
+    {
+      "name": "performance",
+      "model": "mistral-large",
+      "response_time_ms": 2100,
+      "issues": [
+        { "severity": "warning", "line": 9, "message": "Nested loop is O(n²) — can be reduced to O(n) with a set", "suggestion": "seen = set()\nfor item in items:\n    if item not in seen:\n        seen.add(item)" }
+      ]
+    },
+    {
+      "name": "readability",
+      "model": "gpt-4o",
+      "response_time_ms": 1500,
+      "issues": [
+        { "severity": "info", "line": 1, "message": "Function is missing a docstring", "suggestion": "def calculate(a, b):\n    \"\"\"Calculate the result of dividing a by b.\"\"\"\n    ..." },
+        { "severity": "warning", "line": 6, "message": "Variable name 'x' is not descriptive", "suggestion": "Rename 'x' to something meaningful like 'total_count'" }
+      ]
+    },
+    {
+      "name": "style",
+      "model": "codellama-70b",
+      "response_time_ms": 1900,
+      "issues": [
+        { "severity": "info", "line": 3, "message": "Missing whitespace around operator", "suggestion": "return a + b  (not a+b)" }
+      ]
+    }
+  ]
+}
