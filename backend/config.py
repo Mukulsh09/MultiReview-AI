@@ -3,21 +3,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 
 AGENT_CONFIG = {
     "correctness": {
-        "provider": "google",
-        "model": "gemini-2.0-flash",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
     },
     "security": {
-        "provider": "google",
-        "model": "gemini-2.0-flash",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
     },
     "readability": {
-        "provider": "google",
-        "model": "gemini-2.0-flash-lite",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
     },
     "performance": {
         "provider": "huggingface",
