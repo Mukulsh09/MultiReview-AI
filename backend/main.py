@@ -13,9 +13,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",    # Vite dev server
-        "http://localhost:3000",    # Alternative React port
-        "*",                         # Allow all during development — tighten for production
+        "http://localhost:5173",
+        "https://multireview-ai.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
